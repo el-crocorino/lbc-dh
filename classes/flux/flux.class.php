@@ -32,4 +32,28 @@
 			return $dom;
 		}
 
+		public function getElementsByClassName(DOMDocument $DOMDocument, $class_name) {
+
+		    $elements = $DOMDocument->getElementsByTagName("*");
+		    $matched = array();
+		 
+		    foreach($elements as $node) {
+
+		        if (!$node->hasAttributes())
+		            continue;
+		 
+		        $class_attribute = $node->attributes->getNamedItem('class');
+		 
+		        if (!$class_attribute)
+		            continue;
+		 
+		        $classes = explode(' ', $class_attribute->nodeValue);
+		 
+		        if(in_array($class_name, $classes))
+		            $matched[] = $node;
+		    }
+		 
+		    return $matched;
+		}
+
 	}

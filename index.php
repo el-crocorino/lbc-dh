@@ -12,7 +12,18 @@ $flux = new flux('appartements', 'http://www.leboncoin.fr/locations/offres/langu
 
 $search = $flux->get_url_content();
 $search = $flux->load_search_DOM($search);
+$list = $flux->getElementsByClassName($search, 'list-lbc');
 
-var_dump($search);
+foreach ($list[0]->getElementsByTagName('a') as $key => $value) {
+
+ 	$length = $value->attributes->length;
+	$title = $value->attributes->item(1)->textContent;
+	echo $title . "\r\n" ;
+	$url = $value->attributes->item(0)->textContent;
+	echo $url . "\r\n" ;
+
+ }
+
+//var_dump($list);
 
 ?> 
