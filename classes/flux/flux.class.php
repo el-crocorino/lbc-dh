@@ -3,11 +3,12 @@
 	class flux extends flux_orm {
 
 		/**
-		 * get XML files fom flux
-		 * @param  string $url url of RSS Flux
+		 * get HTML content from url
+		 * 
+		 * @param  string $url url of search
 		 * @return [type]      [description]
 		 */
-		public function get_xml() {
+		public function get_url_content() {
 
 			$ch = curl_init($this->get_url());
 
@@ -19,6 +20,16 @@
 			
 			return $ressource;
 
+		}
+
+		public function load_search_DOM($html_content) {
+
+			check_string($html_content, 'html_content');
+
+			$dom = new DOMDocument();
+			$dom->loadHTML($html_content);
+
+			return $dom;
 		}
 
 	}
