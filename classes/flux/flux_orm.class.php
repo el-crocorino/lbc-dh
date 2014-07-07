@@ -18,11 +18,11 @@
 
 		
 		/**
-		* XML filename
+		* HTML content
 		*
 		* @var string
 		*/
-		protected $filename = NULL;
+		protected $HTML_content = NULL;
 
 		public function get_url() {
 			return $this->url;
@@ -42,19 +42,19 @@
 			$this->title = $title;
 		}
 
-		public function get_filename() {
-			return $this->filename;
+		public function get_HTML_content() {
+			return $this->HTML_content;
 		}
 
-		public function set_filename($filename) {
-			check_string($filename, 'filename');
-			$this->filename = $filename;
+		public function set_HTML_content($HTML_content) {
+			check_string($HTML_content, 'HTML_content');
+			$this->HTML_content = $HTML_content;
 		}
 
 		public function __construct($title, $url) {
 			$this->set_title($title);
 			$this->set_url($url);
-			$this->set_filename($this->get_title() . '.xml');
+			$this->set_HTML_content($this->get_title() . '.xml');
 
 		}
 
