@@ -1,7 +1,5 @@
 <?php
 
-	require_once('functions.php');
-
 	class flux_orm {
 
 		/**
