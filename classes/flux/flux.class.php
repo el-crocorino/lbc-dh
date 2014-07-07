@@ -1,9 +1,5 @@
 <?php
 
-	require_once('functions.php');
-	require_once('flux_orm.class.php');
-
-
 	class flux extends flux_orm {
 
 		/**
