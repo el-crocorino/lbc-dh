@@ -14,3 +14,8 @@ function check_string($string, $name) {
 	}
 
 }
+
+function load_class($classname) {
+	require '../classes/' . $classname . '/' . $classname . '_orm.class.php';
+	require '../classes/' . $classname . '/' . $classname . '.class.php';
+}

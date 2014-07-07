@@ -1,0 +1,502 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"classe",
+				"classname"
+			],
+			[
+				"get",
+				"get_show_name  (function)"
+			],
+			[
+				"get_",
+				"get_url  (function)"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"pregma",
+				"preg_match"
+			],
+			[
+				"Simple",
+				"SimpleXMLElement  (class)"
+			],
+			[
+				"sho",
+				"show_file_name  (variable)"
+			],
+			[
+				"Hume",
+				"Humeur_Vagabonde"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"simplexml",
+				"simplexml_load_file"
+			],
+			[
+				"cur",
+				"curl_setopt"
+			],
+			[
+				"curl",
+				"curl_init"
+			],
+			[
+				"method",
+				"method_exists"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 72.0,
+		"selected_items":
+		[
+			[
+				"synt php",
+				"Set Syntax: PHP"
+			],
+			[
+				"Snippet: ",
+				"Snippet: The master display controller for the component."
+			],
+			[
+				"synt sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"reposi",
+				"Package Control: Add Repository"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 1124.0
+	},
+	"console":
+	{
+		"height": 261.0,
+		"history":
+		[
+			"view.run_command(\"show_scope_name\")",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/olivier/public_html/rss_14007.xml",
+		"/home/olivier/public_html/FIPodcastDownloader/fipodcastdownloader.php",
+		"/home/olivier/public_html/FIPodcastDownloader/show_le_masque_et_la_plume.class.php",
+		"/home/olivier/public_html/FIPodcastDownloader/show_orm.class.php",
+		"/home/olivier/public_html/FIPodcastDownloader/show.class.php",
+		"/home/olivier/public_html/rss_11262.xml",
+		"/home/olivier/public_html/rss_11549.xml",
+		"/home/olivier/public_html/FIPodcastDownloader/humeur_vagabonde.php",
+		"/home/olivier/public_html/humeur_vagabonde.php",
+		"/home/olivier/public_html/flux.class.php",
+		"/home/olivier/public_html/flux_orm.class.php",
+		"/home/olivier/public_html/functions.php",
+		"/home/olivier/public_html/show_orm.class.php",
+		"/home/olivier/public_html/show.class.php",
+		"/home/olivier/.config/sublime-text-3/Packages/User/Emmet.sublime-settings",
+		"/home/olivier/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/controller.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/messages/view.html.php",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Modules/Modules_basic_helper.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Modules/Modules_file_and_view.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Modules/Modules_installation_file.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Modules/Modules_module_file.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Modules/Modules_unnamed_template.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Components/Componentdisplay_simple_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-addsubmenu.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-addsubmenu_methods.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-CSS.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-CSS_call.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-language_strings_prefixes.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-Subcontroller_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Support/BS-Submenuhelper_call.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Basic_Sub-controller.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Controller_Set_Default_View.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Layout.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Layout_Search_Filter.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Model.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Model_Constructor.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Model_getStoreId.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Model_Search_Filters_query.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Model_Search_Filters_state.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_Published_INI_Strings.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Backend_List_View.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-Language.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-Layout.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-metadata_sublayout.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-Model.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-record_parameter_sublayout.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-Subcontroller.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-view.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/BE-XML_form.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Plugins/PLG_trigger.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Plugins/PLG_XML_installation.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Plugins/PLG_master_plugin.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Plugins/PLG_plugin_method.sublime-snippet",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/messages/BE-metadata_sublayout.sublime-snippet",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/messages/BE-record_parameter_sublayout.sublime-snippet",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/messages/BE-Layout.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/Controller_Set_Default_View.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Lists/backend_lists_20130124.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/messages/tmpl/default.php",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/Backend Edit Pages/backend_edit_pages.xml",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_controller_set_default_view.sublime-snippet",
+		"/media/olivier/JAMENDO/plakette/mail.txt",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_component_helper.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_table_class.sublime-snippet",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/tables/message.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/croutards.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/access.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/config.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/helpers/croutards.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/controller.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/views/croutards/tmpl/default.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/views/croutards/view.html.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/language/en-GB/en-GB.com_croutards.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/language/fr-FR/fr-FR.com_croutards.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/models/croutards.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/language/fr-FR/fr-FR.com_croutards.sys.ini",
+		"/home/olivier/Dropbox/Assos/Casse-Croûtards/Site/20140424_db_populate.sql",
+		"/home/olivier/Dropbox/Assos/Casse-Croûtards/Site/20140424_db_import",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/croutards.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/language/en-GB/en-GB.com_croutards.sys.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_croutards/index.html",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/helpers/hello.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/hello/view.html.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/hello.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/config.xml",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/access.xml",
+		"/home/olivier/public_html/croutards/joomla16/libraries/joomla/form/form.php",
+		"/home/olivier/public_html/croutards/libraries/joomla/application/component/controller.php",
+		"/home/olivier/public_html/croutards/DEV/administrator/language/fr-FR/fr-FR.lib_joomla.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/views/hello/tmpl/default.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/fr-FR/fr-FR.com_hello.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/en-GB/en-GB.com_hello.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/en-GB/en-GB.com_hello.sys.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/fr-FR/fr-FR.com_hello.sys.ini",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/models/hello.php",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/hello.php",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_component_acces_xml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_component_access_check.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jcomponent_access_check.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jcomponent_config_xml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/iniheader.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_component_xml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_model.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jbasic_view.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jcontroller_display_method_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jdisplay_simple_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/jmaster_display_controller.sublime-snippet",
+		"/home/olivier/public_html/croutards/.gitignore",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/fr-FR/index.html",
+		"/home/olivier/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/olivier/.config/sublime-text-3/Packages/User/joomla/phpheader.sublime-snippet",
+		"/home/olivier/public_html/croutards/administrator/components/com_hello/language/en-GB/fr-FR.com_hello.ini",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jcomponent_config_xml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasic_component_helper.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jcontroller_display_method_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jdisplay_simple_override.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/phpheader.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasiccomponentxml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/iniheader.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jcomponent_access_check.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jmaster_display_controller.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasic_view.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasic_model.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasic_component_acces_xml.sublime-snippet",
+		"/home/olivier/.config/sublime-text-3/Packages/User/jbasic_table_class.sublime-snippet",
+		"/home/olivier/public_html/Php Exercices/POO/character.class.php",
+		"/home/olivier/public_html/Php Exercices/POO/characterManager.class.php"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/olivier/public_html/croutards"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"class",
+			"value",
+			",",
+			" => ",
+			"();\n",
+			"url",
+			"title",
+			"item",
+			"xml_item",
+			"store_in_xml",
+			"title",
+			"url",
+			"flux",
+			"title",
+			"url",
+			"ch_show",
+			"fp",
+			"ch",
+			"emission",
+			"echo",
+			"br",
+			"${NAME}",
+			"${SINCE}",
+			"${VIEW}",
+			"${NAME}",
+			"${SINCE}",
+			"${PK}",
+			"${NAME}",
+			"${MODEL}",
+			"${VIEW}",
+			"${NAME}",
+			"${PK}",
+			"${VIEW_ITEM}",
+			"${VIEW_LIST}",
+			"${OPTION}",
+			"${OPTION_LOWER}",
+			"PK",
+			"${DBTABLE}",
+			"${SORTFIELD}",
+			"${MODEL}",
+			"${NAME}",
+			"${SINCE}",
+			"${SUBPACKAGE}",
+			"${PACKAGE}",
+			"${MODEL}",
+			"${NAME}",
+			"${SINCE}",
+			"SINCE",
+			"${PLURAL}",
+			"${SINGULAR}",
+			"${STUB}",
+			"${NAME}",
+			"${OPTION}",
+			"${CONTROLLER_LIST}",
+			"${CONTROLLER_ITEM}",
+			"${VIEW}",
+			"${NAME}",
+			"${SINCE}",
+			"${NAME}",
+			"${SINGULAR}",
+			"${SINGULAR_UPPER}",
+			"option",
+			"OPTION",
+			"${NAME}",
+			"${VIEW}",
+			"${PK}",
+			"${OPTION}",
+			"PK",
+			"DBTABLE",
+			"${MODEL}",
+			"${NAME}",
+			"${SINCE}",
+			"${SUBPACKAGE}",
+			"${PACKAGE}",
+			"STUB",
+			"${PK}",
+			"${CONTROLLER_ITEM}",
+			"${VIEW}",
+			"${NAME}",
+			"${SINCE}",
+			"${SUBPACKAGE}",
+			"${PACKAGE}",
+			"${NAME}",
+			"{2:OPTION}",
+			"${LAYOUT_VIEW}",
+			"${OPTION}",
+			"${PK}",
+			"$",
+			"${NAME}",
+			"${GROUP}",
+			"${NAME}",
+			"${GROUP}",
+			"$",
+			"${TASK}",
+			"${GROUP}",
+			"</content>",
+			"<!--",
+			"</item>",
+			"</content>",
+			"]]></description>",
+			"<description><![CDATA[",
+			"<item",
+			"${MODULE}",
+			"${NAME}",
+			"${DATE}",
+			"${AUTHOR}",
+			"${MODULE}",
+			"MODULE",
+			"module",
+			"MODULE",
+			"NAME",
+			"name",
+			"NAME",
+			"name",
+			"NAME",
+			"${NAME}",
+			"</item>",
+			"</content>",
+			"<description><![CDATA[",
+			"<item",
+			"$",
+			"</content>",
+			"</snippet>",
+			"</content>",
+			"]]></description>",
+			"<description><![CDATA[",
+			"</item>",
+			"<item "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"	"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "lbc-dh.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
