@@ -22,12 +22,13 @@ $dConfig['directories'] = array(
 	'templates' => 'www/views/templates/',
 	'actions' => 'www/actions/',
 	'states' => 'www/states/',
-	'styles' => 'www/styles/'
+	'styles' => 'www/htdocs/styles/',
+	'js' => 'www/htdocs/js/jquery/'
 	);
 
 // Application controller
 
-$dConfig['webapp'] = array('title' => "Évaluez les annonces !");
+$dConfig['webapp'] = array('title' => "&Eacute;valuez les annonces !");
 
 // Application views conf
 
@@ -41,6 +42,7 @@ $dConfig['views']['item'] = array('url' => $dConfig['directories']['views'] . 'v
 $dConfig['views']['header'] = array('url' => $dConfig['directories']['views'] . 'view_header.php');
 $dConfig['views']['menu'] = array('url' => $dConfig['directories']['views'] . 'view_menu.php');
 $dConfig['style']['url'] = $dConfig['directories']['styles'] . 'style.css';
+$dConfig['js']['url'] = $dConfig['directories']['js'] . 'jquery-2.1.1.min.js';
 
 // Application actions conf
 
