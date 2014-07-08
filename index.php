@@ -8,22 +8,47 @@ for($i=0;$i<count($dConfig['includes']);$i++){
 	require_once('includes/' . $dConfig['includes'][$i]);
 }
 
-$flux = new flux('appartements', 'http://www.leboncoin.fr/locations/offres/languedoc_roussillon/?f=a&th=1&mre=650&sqs=5&ret=2&location=Montpellier');
+session_start(); 
+$dSession = $_SESSION["session"]; 
 
-$search = $flux->get_url_content();
-$search = $flux->load_search_DOM($search);
-$list = $flux->getElementsByClassName($search, 'list-lbc');
+if ($dSession) {
+	$dSession = unserialize($dSession); 
+}
 
-foreach ($list[0]->getElementsByTagName('a') as $key => $value) {
+// get user action
 
- 	$length = $value->attributes->length;
-	$title = $value->attributes->item(1)->textContent;
-	echo $title . "\r\n" ;
-	$url = $value->attributes->item(0)->textContent;
-	echo $url . "\r\n" ;
+$sAction = $_GET['action'] ? strtolower($_GET['action']) : 'init'; 
+$sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
 
- }
+if (!authorize_next_action($dConfig,$dSession,$sAction)){ 
+	$sAction = 'invalid_suite'; 
+}
 
-//var_dump($list);
 
-?> 
+// manage user action
+ 
+$scriptAction = $dConfig['actions'][$sAction] ? 
+$dConfig['actions'][$sAction]['url'] : 
+$dConfig['actions']['invalid_action']['url']; 
+
+include $scriptAction; 
+
+// send view to client
+
+$sStatus = $dSession['state']['main']; 
+$scriptView = $dConfig['states'][$sStatus]['view']; 
+
+include $scriptView; 
+
+
+
+// fin du script - on ne devrait pas arriver là sauf bogue 
+
+trace ("Erreur de configuration."); 
+trace("Action=[$sAction]"); 
+trace("scriptAction=[$scriptAction]"); 
+trace("Etat=[$sStatus]"); 
+trace("scriptVue=[$scriptVue]"); 
+trace ("Vérifiez que les script existent et que le script [$scriptVue] se termine par l'appel à finSession."); 
+
+exit(0); 

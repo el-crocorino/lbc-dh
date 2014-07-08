@@ -5,42 +5,41 @@ include 'config.php';
 
 // libraries inclusion
 
-for($i=0;$i<count($dConfig['includes']);$i++){ 
+for ($i=0; $i < count($dConfig['includes']); $i++) { 
 	include($dConfig['includes'][$i]);
 }
-
 
 // start session 
 
 session_start(); 
-$dSession=$_SESSION["session"]; 
+$dSession = $_SESSION["session"]; 
 
-if($dSession) {
-	$dSession=unserialize($dSession); 
+if ($dSession) {
+	$dSession = unserialize($dSession); 
 }
 
 // get user action
 
-$sAction=$_GET['action'] ? strtolower($_GET['action']) : 'init'; 
-$sAction=strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
+$sAction = $_GET['action'] ? strtolower($_GET['action']) : 'init'; 
+$sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
 
-if( !authorize_next_action($dConfig,$dSession,$sAction)){ 
-	$sAction='enchainementinvalide'; 
+if (!authorize_next_action($dConfig,$dSession,$sAction)){ 
+	$sAction = 'invalid_suite'; 
 }
 
 
 // manage user action
  
-$scriptAction=$dConfig['actions'][$sAction] ? 
+$scriptAction = $dConfig['actions'][$sAction] ? 
 $dConfig['actions'][$sAction]['url'] : 
-$dConfig['actions']['actioninvalide']['url']; 
+$dConfig['actions']['invalid_action']['url']; 
 
 include $scriptAction; 
 
 // send view to client
 
-$sStatus=$dSession['status']['principal']; 
-$scriptVue=$dConfig['statuses'][$sStatus]['vue']; 
+$sStatus = $dSession['status']['main']; 
+$scriptVue = $dConfig['statuses'][$sStatus]['view']; 
 
 include $scriptVue; 
 
@@ -91,7 +90,7 @@ function authorize_next_action(&$dConfig,&$dSession,$sAction){
 	// vérifie si l'action courante est autorisée vis à vis de l'état précédent 
 
 	$status=$dSession['status']['main']; 
-	if(! isset($status)) $status='sansstatus'; 
+	if (! isset($status)) $status='sansstatus'; 
 
 	// vérification action 
 
