@@ -1,6 +1,6 @@
 <?php 
 
-    class user_orm {
+    class user_orm extends basic {
 
     /**
      * dbobject type
@@ -114,21 +114,7 @@
         return $this->updated;
     }
 
-    public function hydrate(array $data) {
-
-      foreach ($data AS $key => $value) {
-
-        $method = 'set_' . ucfirst($key);
-            
-        if (method_exists($this, $method)) {
-            $this->$method($value);
-        }
-
-      }
-
-    }
-
-    function __construct(array $data) {
+    public function __construct(array $data) {
 
         $this->hydrate($data);
 

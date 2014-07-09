@@ -52,14 +52,5 @@
 
         public function check_username() {
 
-            $sql = array();
-            $sql['fields'] = 'user_username';
-            $sql['tables'] = 'user';
-
-            $db = new db($dConfig['db']);
-
-            $username_list = $db->get_core_slave()->get_all($sql);
-            dump($username_list);
-
         }
     }

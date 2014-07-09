@@ -1,6 +1,6 @@
 <?php
 
-	class flux_orm {
+	class flux_orm extends basic  {
 
 		/**
 		 * Url of RSS flux

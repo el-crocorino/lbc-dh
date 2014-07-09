@@ -36,8 +36,20 @@ function check_int($int, $name) {
 * @param string $classname Class name
 */
 function load_class($classname) {
-	require 'classes/' . $classname . '/' . $classname . '_orm.class.php';
-	require 'classes/' . $classname . '/' . $classname . '.class.php';
+
+    $files = array (
+        'orm' => 'classes/' . $classname . '/' . $classname . '_orm.class.php',
+        'class' => 'classes/' . $classname . '/' . $classname . '.class.php'
+    );
+    
+    foreach ($files AS $file) {
+        
+        if (file_exists($file)) {
+            require_once($file);     
+        }
+
+    }
+	
 }
 
 /**

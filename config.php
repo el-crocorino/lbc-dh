@@ -31,6 +31,7 @@ $dConfig['directories'] = array(
 
 $dConfig['db']['host'] = 'localhost';
 $dConfig['db']['dbname'] = 'lbc-dh';
+//$dConfig['db']['master'] = array('user' => 'root', 'pass' => 'alligator');
 $dConfig['db']['master'] = array('user' => 'master', 'pass' => 'wFcZzTHLxv92MVUv');
 $dConfig['db']['slave'] = array('user' => 'slave', 'pass' => '78SBvhpnGPzf3L2m');
 

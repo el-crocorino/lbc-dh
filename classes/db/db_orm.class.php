@@ -1,6 +1,6 @@
 <?php
 
-class db_orm {
+class db_orm extends basic {
 
     /**
      * Db host
@@ -81,44 +81,47 @@ class db_orm {
     }
 
     public function set_core_master(array $user_data) {
-        $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
-        $this->core_master = $pdo;
+
+        try {
+            $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);    
+            $this->core_master = $pdo;
+        }
+        
+        catch( PDOException $e) {
+            echo $e->getMessage();
+        }
+        
     }
 
     public function get_core_master() {
         return $this->core_master;
     }
 
-    public function set_core_slave(array $user_data) {        
-        $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
-        $this->core_master = $pdo;
+    public function set_core_slave(array $user_data) { 
+
+        try {                 
+            $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
+            $this->core_master = $pdo;
+        }
+        
+        catch( PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
     public function get_core_slave() {
         return $this->core_slave;
     }
 
-    public function hydrate(array $data) {
-
-      foreach ($data AS $key => $value) {
-
-        $method = 'set_' . ucfirst($key);
-            
-        if (method_exists($this, $method)) {
-            $this->$method($value);
-        }
-
-      }
-
-    }
-
     public function __construct($data) {
 
         $data = array(
             "host" => $data['host'],
-            "dbname" => $data['host'],
+            "dbname" => $data['dbname'],
             "core_master" => $data['master'],
             "core_slave" => $data['slave']);
+
+        $this->hydrate($data);
     }
 
 }
