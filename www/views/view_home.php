@@ -1,14 +1,14 @@
 <div id="content">
     <div id="login_form">
         <h1>Connexion</h1>
-        <form action="index.php?action=login">
+        <form method="post" action="index.php?action=login">
             <div class="form_item">
                 <label for="username">Nom d'utilisateur</label><br />
-                <input type="text" id="username" value"utilisateur"><br />
+                <input type="text" id="username" value=""><br />
             </div>
             <div class="form_item">
                 <label for="password">Mot de passe</label><br />
-                <input type="password" id="password"><br />
+                <input type="password" id="password" value=""><br />
             </div>
             <input type="submit" class="submit" value="me connecter">
         </form>
@@ -16,7 +16,7 @@
     </div>
     <div id="register_form" style="display:none;">
         <h1>Cr&eacute;er un compte</h1>
-        <form action="index.php?action=login">
+        <form method="post" action="index.php?action=register">
             <div class="form_item">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username">
@@ -48,6 +48,7 @@
             $('#register_form').hide();
             $('#login_form').show();
         });
+
     });
 
 </script>

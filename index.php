@@ -14,13 +14,17 @@ $dSession = $_SESSION["session"];
 if ($dSession) {
 	$dSession = unserialize($dSession); 
 }
+dump($dSession);
 
 // get user action
 
 $sAction = $_GET['action'] ? strtolower($_GET['action']) : 'init'; 
 $sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
 
-if (!authorize_next_action($dConfig,$dSession,$sAction)){ 
+dump($sAction);
+
+#if (authorize_next_action($dConfig, $dSession, $sAction)){ 
+if (!authorize_next_action($dConfig, $dSession, $sAction)){ 
 	$sAction = 'invalid_suite'; 
 }
 
@@ -31,12 +35,16 @@ $scriptAction = $dConfig['actions'][$sAction] ?
 $dConfig['actions'][$sAction]['url'] : 
 $dConfig['actions']['invalid_action']['url']; 
 
+dump($scriptAction);
+
 include $scriptAction; 
 
 // send view to client
 
 $sStatus = $dSession['state']['main']; 
 $scriptView = $dConfig['states'][$sStatus]['view']; 
+
+dump($scriptView);
 
 include $scriptView; 
 

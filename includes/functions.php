@@ -108,6 +108,8 @@ function authorize_next_action(&$dConfig, &$dSession, $sAction){
     // action check
 
     $authorized_actions = $dConfig['states'][$state]['authorized_actions'];
+    dump($state);
+    dump($authorized_actions);
     $autorise =  !isset($authorized_actions) || in_array($sAction,$authorized_actions);
 
     return $autorise;
@@ -120,7 +122,21 @@ function authorize_next_action(&$dConfig, &$dSession, $sAction){
  * @param  array $dInfos informations dictionnary
  * @return NULL
  */
-function dump($dInfos){
+function dump($var){
+
+    echo '<pre>';
+    var_dump($var);
+    echo '</pre>';    
+
+}
+
+/**
+ * Diplays an information dictionnary
+ * 
+ * @param  array $dInfos informations dictionnary
+ * @return NULL
+ */
+function ddump($dInfos){
 
     while (list($key, $value) = each($dInfos)) {
         echo "[$key, $value]<br>\n";

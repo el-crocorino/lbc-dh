@@ -1,8 +1,13 @@
 <?php 
 
-    var_dump($_POST);
-    echo "zob";
-    exit;
-   // Display login form
+    echo "post"  ;
+    dump($_POST);
 
-   $dSession['state'] = array('main' => 's_searches_form', 'option' => 'login'); 
+exit;
+
+
+
+
+   // Display user searches list
+
+   #$dSession['state'] = array('main' => 's_searches_form', 'option' => 'login'); 

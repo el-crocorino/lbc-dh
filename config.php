@@ -42,7 +42,7 @@ $dConfig['webapp'] = array('title' => "&Eacute;valuez les annonces !");
 $dConfig['templates']['main'] = array('url' => $dConfig['directories']['templates'] . 'template_main.php');
 $dConfig['templates']['item'] = array('url' => $dConfig['directories']['templates'] . 'template_item.php');
 $dConfig['views']['home'] = array('url' => $dConfig['directories']['views'] . 'view_home.php');
-$dConfig['views']['error'] = array('url' => $dConfig['directories']['views'] . 'view_errors.php');
+$dConfig['views']['errors'] = array('url' => $dConfig['directories']['views'] . 'view_errors.php');
 $dConfig['views']['searches_form'] = array('url' => $dConfig['directories']['views'] . 'view_searches_form.php');
 $dConfig['views']['search'] = array('url' => $dConfig['directories']['views'] . 'view_search.php');
 $dConfig['views']['item'] = array('url' => $dConfig['directories']['views'] . 'view_item.php');
@@ -64,21 +64,22 @@ $dConfig['actions']['post:note_item'] = array('url' => $dConfig['directories']['
 $dConfig['actions']['post:delete_item'] = array('url' => $dConfig['directories']['actions'] . 'action_delete_item.php');
 $dConfig['actions']['get:retourformulaire'] = array('url' => $dConfig['directories']['actions'] . 'action_retourformulaire.php');
 $dConfig['actions']['post:effacerformulaire'] = array('url' => $dConfig['directories']['actions'] . 'action_init.php');
-$dConfig['actions']['invalid_suite'] = array('url' => $dConfig['directories']['actions'] . 'action_invalid_suite.php');
+$dConfig['actions']['invalid_suite'] = array('url' => $dConfig['directories']['actions'] . 'invalid_suite.php');
 $dConfig['actions']['invalid_action'] = array('url' => $dConfig['directories']['actions'] . 'invalid_action.php');
 
 // Application states conf
 
 $dConfig['states']['s_home'] = array(
 	'authorized_actions' => array(
-		'get:init'),
+		'get:init',
+		'post:login',		
+		'post:add_user'),
 	'view' => $dConfig['directories']['states'] . 's_home.php'
 );
 
 $dConfig['states']['s_searches_form'] = array(
 	'authorized_actions' => array(
-		'post:login',		
-		'post:add_user',
+		'get:init',
 		'post:view_search',
 		'post:delete_search'),
 	'view' => $dConfig['directories']['states'] . 's_searches_form.php'
@@ -86,6 +87,7 @@ $dConfig['states']['s_searches_form'] = array(
 
 $dConfig['states']['s_search'] = array(
 	'authorized_actions' => array(
+		'get:init',
 		'get:searches_form',		
 		'post:view_search',
 		'post:add_search',
@@ -97,6 +99,7 @@ $dConfig['states']['s_search'] = array(
 
 $dConfig['states']['s_item'] = array(
 	'authorized_actions' => array(
+		'get:init',
 		'get:searches_form',
 		'post:view_item',
 		'post:note_item',
@@ -106,8 +109,8 @@ $dConfig['states']['s_item'] = array(
 
 $dConfig['states']['s_errors'] = array(
 	'authorized_actions' => array(
-		'get:retourformulaire',
-		'get:init'),
+		'get:init',
+		'get:retourformulaire'),
 	'view' => $dConfig['directories']['states'] . 's_errors.php'
 );
 

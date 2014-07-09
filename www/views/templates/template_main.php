@@ -5,6 +5,9 @@
     <link type="text/css" href="<?php echo $dDisplay['style_url'] ?>" rel="stylesheet" />
   </head>
   <body>
+  <pre>
+  <?php #print_r(get_defined_vars())?>
+  </pre>
     <div id="main">
       <?php
         include $dDisplay['header'];
