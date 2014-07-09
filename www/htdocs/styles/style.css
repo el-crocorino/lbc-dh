@@ -1,0 +1,88 @@
+
+body {
+    background-image: url('../images/body.jpg'); 
+    background-repeat: repeat;
+    font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    color: #4e443c;
+}
+
+#main {
+    margin: auto;
+    width: 1024px;
+}
+
+.header-body {
+    background-color: #e3dccd;
+    border-radius: 12px;
+    width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.main-title {
+    font-size: 50px ;
+    color: white;
+    font-weight: bold;
+    font
+}
+
+.subtitle{
+    font-size: 20px;
+    color: #f60;
+}
+
+#menu li {
+    display: inline-block;
+    list-style: none; /* pour enlever les puces sur IE7 */
+    margin: 10px;
+}
+
+#content {
+    width:300;
+    background-color: #FFFFFF;
+    border: 1px solid #e2e0d8;
+    border-radius: 12px;
+    margin: auto;
+    padding: 20px;    
+    box-shadow: 5px;
+}
+
+#content h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#content label {
+    font-size:20px;
+    color: #243c47;
+}
+
+#content input {
+    color: #9bb1bc;
+    border: 1px solid #9bb1bc;
+    border-radius: 7px;
+    font-size: 20px;
+    width: 100%;
+    padding: 5px;
+}
+
+.form_item {
+    margin: 20px 0 5px 0;
+}
+
+.submit {
+    background-color: #f60;
+    color: #FFFFFF;
+    height: 40px;
+    width: 80%;
+    margin: 20px auto;
+
+}
+
+a {
+    text-decoration: none;
+    color: #f14e32;
+    font-weight: bold;
+}
