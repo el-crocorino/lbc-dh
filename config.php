@@ -25,6 +25,13 @@ $dConfig['directories'] = array(
 	'styles' => 'www/styles/'
 	);
 
+// Application db infos
+
+$dConfig['db']['host'] = 'localhost';
+$dConfig['db']['dbname'] = 'lbc-dh';
+$dConfig['db']['master'] = array('user' => 'master', 'pass' => 'wFcZzTHLxv92MVUv');
+$dConfig['db']['slave'] = array('user' => 'slave', 'pass' => '78SBvhpnGPzf3L2m');
+
 // Application controller
 
 $dConfig['webapp'] = array('title' => "Évaluez les annonces !");
