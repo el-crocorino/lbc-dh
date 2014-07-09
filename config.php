@@ -2,9 +2,10 @@
 
 // Php configuration
 
-ini_set("register_globals","off");
+ini_set("register_globals","on");
 ini_set("display_errors","on");
-ini_set("expose_php","off");
+/*ini_set("expose_php","off");*/
+ini_set('error_reporting', E_ALL);
 
 // Application libraries
 
@@ -55,6 +56,7 @@ $dConfig['js']['url'] = $dConfig['directories']['js'] . 'jquery-2.1.1.min.js';
 
 $dConfig['actions']['get:init'] = array('url' => $dConfig['directories']['actions'] . 'action_init.php');
 $dConfig['actions']['post:login'] = array('url' => $dConfig['directories']['actions'] . 'action_login.php');
+$dConfig['actions']['post:register'] = array('url' => $dConfig['directories']['actions'] . 'action_register.php');
 $dConfig['actions']['get:searches_form'] = array('url' => $dConfig['directories']['actions'] . 'action_searches_form.php');
 $dConfig['actions']['post:add_search'] = array('url' => $dConfig['directories']['actions'] . 'action_add_search.php');
 $dConfig['actions']['post:delete_search'] = array('url' => $dConfig['directories']['actions'] . 'action_delete_search.php');
@@ -73,7 +75,7 @@ $dConfig['states']['s_home'] = array(
 	'authorized_actions' => array(
 		'get:init',
 		'post:login',		
-		'post:add_user'),
+		'post:register'),
 	'view' => $dConfig['directories']['states'] . 's_home.php'
 );
 

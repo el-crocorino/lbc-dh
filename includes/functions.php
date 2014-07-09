@@ -30,20 +30,6 @@ function check_int($int, $name) {
 
 }
 
-function hydrate(array $donnees) {
-
-  foreach ($donnees AS $key => $value) {
-
-    $method = 'set_' . ucfirst($key);
-        
-    if (method_exists($this, $method)) {
-        $this->$method($value);
-    }
-
-  }
-
-}
-
 /**
 * Load a given class + its orm_class
 *

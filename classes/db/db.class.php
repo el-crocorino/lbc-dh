@@ -2,14 +2,6 @@
 
     class db extends db_orm {
 
-        public static function get_core_master() {
-            parent::construct('master');
-        }
-
-        public static function get_core_slave() {
-            parent::construct('slave');
-        }
-
         public function get_all(array $sql) {
 
             $sql = 'SELECT ';
@@ -31,7 +23,7 @@
 
             var_dump($sql);
 
-            $result = $this->get_pdo()->query($sql);
+            $result = $this->get_core_slave()->query($sql);
             $result->setFetchMode(PDO::FETCH_OBJ);
 
             return $result;

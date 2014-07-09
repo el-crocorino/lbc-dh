@@ -31,18 +31,18 @@ class db_orm {
     private $password = NULL;
 
     /**
-     * dbobject type
+     * master PDO Object
      * 
      * @var string
      */
-    private $type = NULL;
+    private $core_master = NULL;
 
     /**
-     * pdo db object
+     * slave PDO Object
      * 
      * @var object
      */
-    private $pdo = NULL;
+    private $core_slave = NULL;
 
     public function set_host($host) {
         check_string($host, 'host');
@@ -80,37 +80,45 @@ class db_orm {
         return $this->password;
     }
 
-    public function set_type($type) {
-        check_string($type, 'type');
-        $this->type = $type;
+    public function set_core_master(array $user_data) {
+        $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
+        $this->core_master = $pdo;
     }
 
-    public function get_type() {
-        return $this->type;
+    public function get_core_master() {
+        return $this->core_master;
     }
 
-    public function set_pdo($pdo) {
-        check_string($pdo, 'pdo');
-        $this->pdo = $pdo;
+    public function set_core_slave(array $user_data) {        
+        $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
+        $this->core_master = $pdo;
     }
 
-    public function get_pdo() {
-        return $this->pdo;
+    public function get_core_slave() {
+        return $this->core_slave;
     }
 
-    public function __construct($type) {
+    public function hydrate(array $data) {
 
-        check_string($type, 'type');
+      foreach ($data AS $key => $value) {
 
-        try {
-            $pdo = new PDO('mysql:host=' . $dConfig['db']['host'] . ', dbname=' . $dConfig['db']['dbname'], $dConfig['db'][$type]['user'], $dConfig['db'][$type]['pass']);
-            $this->set_pdo($pdo);
+        $method = 'set_' . ucfirst($key);
+            
+        if (method_exists($this, $method)) {
+            $this->$method($value);
         }
 
-        catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-        
+      }
+
+    }
+
+    public function __construct($data) {
+
+        $data = array(
+            "host" => $data['host'],
+            "dbname" => $data['host'],
+            "core_master" => $data['master'],
+            "core_slave" => $data['slave']);
     }
 
 }

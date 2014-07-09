@@ -23,7 +23,6 @@ $sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction";
 
 dump($sAction);
 
-#if (authorize_next_action($dConfig, $dSession, $sAction)){ 
 if (!authorize_next_action($dConfig, $dSession, $sAction)){ 
 	$sAction = 'invalid_suite'; 
 }
