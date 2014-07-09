@@ -16,6 +16,35 @@ function check_string($string, $name) {
 }
 
 /**
+ * Check if var is an integer
+ *
+ * @param  integer $string var to be tested
+ * @param  string $name   name of var
+ * @return NULL
+ */
+function check_int($int, $name) {
+
+    if (!is_int($int)) {
+        throw new Exception($name .  " must be a int.", 1);
+    }
+
+}
+
+function hydrate(array $donnees) {
+
+  foreach ($donnees AS $key => $value) {
+
+    $method = 'set_' . ucfirst($key);
+        
+    if (method_exists($this, $method)) {
+        $this->$method($value);
+    }
+
+  }
+
+}
+
+/**
 * Load a given class + its orm_class
 *
 * @param string $classname Class name

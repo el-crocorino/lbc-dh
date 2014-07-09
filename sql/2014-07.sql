@@ -13,5 +13,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_email` varchar(100) DEFAULT NULL,
   `user_created` datetime NOT NULL,
   `user_updated` datetime NOT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_username` (`user_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

@@ -37,6 +37,13 @@ class db_orm {
      */
     private $type = NULL;
 
+    /**
+     * pdo db object
+     * 
+     * @var object
+     */
+    private $pdo = NULL;
+
     public function set_host($host) {
         check_string($host, 'host');
         $this->host = $host;
@@ -82,12 +89,28 @@ class db_orm {
         return $this->type;
     }
 
+    public function set_pdo($pdo) {
+        check_string($pdo, 'pdo');
+        $this->pdo = $pdo;
+    }
+
+    public function get_pdo() {
+        return $this->pdo;
+    }
+
     public function __construct($type) {
 
         check_string($type, 'type');
-        $pdo = new PDO('host=' . $dConfig['db']['host'] . ', dbname=' . $dConfig['db']['dbname'], $dConfig['db'][$type]['user'], $dConfig['db'][$type]['pass']);
-        return $pdo;
 
+        try {
+            $pdo = new PDO('mysql:host=' . $dConfig['db']['host'] . ', dbname=' . $dConfig['db']['dbname'], $dConfig['db'][$type]['user'], $dConfig['db'][$type]['pass']);
+            $this->set_pdo($pdo);
+        }
+
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        
     }
 
 }
