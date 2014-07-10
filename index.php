@@ -1,10 +1,10 @@
 <?php 
 
-require_once('config.php') ; 
+require_once('config/config.php'); 
 
 // libraries inclusion
 
-for($i=0;$i<count($dConfig['includes']);$i++){ 
+for($i = 0; $i < count($dConfig['includes']); ++$i) { 
 	require_once('includes/' . $dConfig['includes'][$i]);
 }
 
@@ -14,7 +14,6 @@ $dSession = $_SESSION["session"];
 if ($dSession) {
 	$dSession = unserialize($dSession); 
 }
-dump($dSession);
 
 // get user action
 

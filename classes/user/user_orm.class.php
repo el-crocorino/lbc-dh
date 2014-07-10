@@ -3,49 +3,56 @@
     class user_orm extends basic {
 
     /**
-     * dbobject type
+     * user id
      * 
      * @var string
      */
     private $id = NULL;
 
     /**
-     * dbobject type
+     * user username
      * 
      * @var string
      */
     private $username = NULL;
 
     /**
-     * dbobject type
+     * user password
+     * 
+     * @var string
+     */
+    private $password = NULL;
+
+    /**
+     * user firstname
      * 
      * @var string
      */
     private $firstname = NULL;
 
     /**
-     * dbobject type
+     * user lastname
      * 
      * @var string
      */
     private $lastname = NULL;
 
     /**
-     * dbobject type
+     * user email
      * 
      * @var string
      */
     private $email = NULL;
 
     /**
-     * dbobject type
+     * user creation date
      * 
      * @var string
      */
     private $created = NULL;
 
     /**
-     * dbobject type
+     * user update date
      * 
      * @var string
      */
@@ -67,6 +74,15 @@
 
     public function get_username() {
         return $this->username;
+    }
+
+    public function set_password($password) {
+        check_string($password, 'password');
+        $this->password = $password;
+    }
+
+    public function get_password() {
+        return $this->password;
     }
 
     public function set_firstname($firstname) {
@@ -112,12 +128,6 @@
 
     public function get_updated() {
         return $this->updated;
-    }
-
-    public function __construct(array $data) {
-
-        $this->hydrate($data);
-
     }
 
 

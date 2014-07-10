@@ -80,33 +80,16 @@ class db_orm extends basic {
         return $this->password;
     }
 
-    public function set_core_master(array $user_data) {
-
-        try {
-            $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);    
-            $this->core_master = $pdo;
-        }
-        
-        catch( PDOException $e) {
-            echo $e->getMessage();
-        }
-        
+    public function set_core_master($core_master) {
+        $this->core_master = $core_master;
     }
 
     public function get_core_master() {
         return $this->core_master;
     }
 
-    public function set_core_slave(array $user_data) { 
-
-        try {                 
-            $pdo = new PDO('mysql:host=' . $this->get_host() . ';dbname=' . $this->get_dbname(), $user_data['user'], $user_data['pass']);
-            $this->core_master = $pdo;
-        }
-        
-        catch( PDOException $e) {
-            echo $e->getMessage();
-        }
+    public function set_core_slave($core_slave) {
+        $this->core_slave = $core_slave;
     }
 
     public function get_core_slave() {
@@ -115,13 +98,13 @@ class db_orm extends basic {
 
     public function __construct($data) {
 
-        $data = array(
+/*        $data = array(
             "host" => $data['host'],
             "dbname" => $data['dbname'],
             "core_master" => $data['master'],
             "core_slave" => $data['slave']);
 
-        $this->hydrate($data);
+        $this->hydrate($data);*/
     }
 
 }

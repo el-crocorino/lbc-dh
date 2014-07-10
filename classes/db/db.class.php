@@ -2,6 +2,20 @@
 
     class db extends db_orm {
 
+        public function get_core_master() {
+
+            $dbmanager = new dbmanager();
+            return $dbmanager->get_core_master();
+
+        }
+
+        public function get_core_slave() {
+
+            $dbmanager = new dbmanager();
+            return $dbmanager->get_core_slave();
+
+        }
+
         public function get_all(array $sql) {
 
             $sql = 'SELECT ';

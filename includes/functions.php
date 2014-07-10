@@ -1,5 +1,14 @@
 <?php
 
+function get_config($domain) {
+    
+    check_string($domain, 'domain');
+
+    include('config/config.php');
+    return $dConfig[$domain];
+
+}
+
 /**
  * Check if var is a string
  *
@@ -39,7 +48,8 @@ function load_class($classname) {
 
     $files = array (
         'orm' => 'classes/' . $classname . '/' . $classname . '_orm.class.php',
-        'class' => 'classes/' . $classname . '/' . $classname . '.class.php'
+        'class' => 'classes/' . $classname . '/' . $classname . '.class.php',
+        'manager' => 'classes/' . $classname . '/' . $classname . 'manager.class.php'
     );
     
     foreach ($files AS $file) {

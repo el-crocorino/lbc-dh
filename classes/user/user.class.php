@@ -2,6 +2,12 @@
 
     class user extends user_orm {
 
+        public function __construct(array $data) {
+
+            $this->hydrate($data);
+
+        }
+
         public function add() {
 
         }
