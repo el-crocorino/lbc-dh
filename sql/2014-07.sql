@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(10) NOT NULL AUTO_INCREMENT,
   `user_username` varchar(50) NOT NULL,
+  `user_password` VARCHAR( 100 ) NOT NULL,
   `user_firstname` varchar(50) DEFAULT NULL,
   `user_lastname` varchar(50) DEFAULT NULL,
   `user_email` varchar(100) DEFAULT NULL,

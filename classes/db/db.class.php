@@ -2,14 +2,14 @@
 
     class db extends db_orm {
 
-        public function get_core_master() {
+        public static function get_core_master() {
 
             $dbmanager = new dbmanager();
             return $dbmanager->get_core_master();
 
         }
 
-        public function get_core_slave() {
+        public static function get_core_slave() {
 
             $dbmanager = new dbmanager();
             return $dbmanager->get_core_slave();
@@ -41,6 +41,16 @@
             $result->setFetchMode(PDO::FETCH_OBJ);
 
             return $result;
+
+        }
+
+        public function insert($sql) {
+
+            dump($this->get_core_master());
+            echo "insert sql" ;
+            dump($sql);
+            $query = $this->get_core_master()->prepare('INSERT INTO ' . $sql['tables'] . ' (' . $sql['fields'] . ') VALUES (' . $sql['values'] . ')');
+            $query->execute($sql['data']);
         }
 
     }

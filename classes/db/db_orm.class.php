@@ -84,7 +84,7 @@ class db_orm extends basic {
         $this->core_master = $core_master;
     }
 
-    public function get_core_master() {
+    public static function get_core_master() {
         return $this->core_master;
     }
 
@@ -92,19 +92,13 @@ class db_orm extends basic {
         $this->core_slave = $core_slave;
     }
 
-    public function get_core_slave() {
+    public static function get_core_slave() {
         return $this->core_slave;
     }
 
-    public function __construct($data) {
+    public function __construct() {
 
-/*        $data = array(
-            "host" => $data['host'],
-            "dbname" => $data['dbname'],
-            "core_master" => $data['master'],
-            "core_slave" => $data['slave']);
 
-        $this->hydrate($data);*/
     }
 
 }
