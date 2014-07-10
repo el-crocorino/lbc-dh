@@ -8,19 +8,26 @@
 
         // Display login form
         
-        $dSession['state'] = array('main' => 's_searches_form', 'option' => 'login'); 
+        $dSession['state'] = array('main' => 's_home', 'option' => 'password_mismatch');         
+
     } else {
 
         $user_data = array('username' => $username, 'password' => $password);
         $user = new user($user_data);
-        $user->save();
+        $user->hash_password();
 
-        // Display seraches list form
-        
-        $dSession['state'] = array('main' => 's_home', 'option' => 'login'); 
+        if (!$user->check_existing_username()) {
+
+            $dSession['state'] = array('main' => 's_home', 'option' => 'existing_user');
+
+        } else {
+
+            $user->add();
+
+            // Display searches list form
+            
+            $dSession['state'] = array('main' => 's_searches_form', 'option' => 'login');    
+            
+        }
     
     }
-
-
-
-

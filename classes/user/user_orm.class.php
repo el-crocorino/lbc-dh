@@ -59,7 +59,7 @@
     private $updated = NULL;
 
     public function set_id($id) {
-        check_int($id, 'id');
+        check_string($id, 'id');
         $this->id = $id;
     }
 

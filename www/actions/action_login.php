@@ -1,21 +1,35 @@
 <?php 
 
-    echo "post"  ;
-    dump($_SESSION);
-    dump($_POST);
+    $username = htmlentities($_POST['username']);
+    $password = $_POST['password'];
 
-    $user = new user();
-    $user->load(htmlspecialchars($_POST['username']));
+    $user_data = array('username' => $username, 'password' => $password);
 
-    if ($user->check_password($_POST['password'])) {
-        $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 
-    } else {}
+    $user = user::load($username);
 
-exit;
+    if(!$user) {
 
+        // Display login form        
+            
+        $dSession['state'] = array('main' => 's_home', 'option' => 'unknown_user'); 
 
+    } else {
 
+        if (!$user->check_password($password)) {
 
-   // Display user searches list
+            // Display login form        
+            
+            $dSession['state'] = array('main' => 's_home', 'option' => 'auth_failed'); 
 
-   #$dSession['state'] = array('main' => 's_searches_form', 'option' => 'login'); 
+        } else {
+        
+            // Display login form        
+            
+            $dSession['user_id'] = $user->get_id();
+            $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 
+            
+        }
+
+    }
+
+    

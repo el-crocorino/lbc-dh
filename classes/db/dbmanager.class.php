@@ -37,12 +37,10 @@ class dbmanager extends basic {
         $dbconf = $this->get_dbconfig();
 
         try {
-            #$pdo = new PDO('mysql:host=' . $dbconf['host'] . ';dbname=' . $dbconf['dbname'], $dbconf['master']['user'], $dbconf['master']['pass']);
-                   /*new PDO("mysql:host=$host;dbname=$dbname", $user, $pas*/
-            $pdo = new PDO('mysql:host=' . $dbconf['host'] . ';dbname=' . $dbconf['dbname'], 'root', 'alligator', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
-            dump('mysql:host=' . $dbconf['host'] . ';dbname=' . $dbconf['dbname']); 
-            dump($dbconf['master']['user']);
-            dump($dbconf['master']['pass']);
+
+            $pdo = new PDO('mysql:host=' . $dbconf['host'] . ';dbname=' . $dbconf['dbname'], $dbconf['master']['user'], $dbconf['master']['pass']);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             $this->core_master = $pdo;
         }
         
@@ -65,8 +63,11 @@ class dbmanager extends basic {
 
         $dbconf = $this->get_dbconfig();
 
-        try {                 
+        try {    
+
             $pdo = new PDO('mysql:host=' . $dbconf['host'] . ';dbname=' . $dbconf['dbname'], $dbconf['slave']['user'], $dbconf['slave']['pass']);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
             $this->core_master = $pdo;
         }
         

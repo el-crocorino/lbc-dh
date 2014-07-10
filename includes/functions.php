@@ -18,9 +18,13 @@ function get_config($domain) {
  */
 function check_string($string, $name) {
 
-	if (!is_string($string)) {
-		throw new Exception($name .  " must be a string.", 1);
-	}
+    if($string !== NULL) {
+
+        if (!is_string($string)) {
+            throw new Exception($name .  " must be a string.", 1);
+        } 
+           
+    }    
 
 }
 
@@ -33,9 +37,15 @@ function check_string($string, $name) {
  */
 function check_int($int, $name) {
 
-    if (!is_int($int)) {
-        throw new Exception($name .  " must be a int.", 1);
+    if($int !== NULL) {
+
+        if (!is_int($int)) {
+            throw new Exception($name .  " must be a int.", 1);
+        } 
+           
     }
+
+    
 
 }
 

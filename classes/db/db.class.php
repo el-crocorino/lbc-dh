@@ -16,39 +16,23 @@
 
         }
 
-        public function get_all(array $sql) {
+        public function get_all(array $sql) {            
 
-            $sql = 'SELECT ';
-            $sql .= isset($sql['fields']) ? $sql['fields'] : '*' ;
-            $sql .= ' FROM ';
-            $sql .= isset($sql['tables']) ? $sql['fields'] : '' ;
+            $sql_string = 'SELECT ';
+            $sql_string .= isset($sql['fields']) ? $sql['fields'] : '*';
+            $sql_string .= ' FROM ' . $sql['tables'];
+            $sql_string .= isset($sql['where']) ? ' WHERE ' . implode(' OR ', $sql['where']) : '';
 
-            if (isset($sql['where'])) {
-                $sql .= ' WHERE ';
-                $sql .= implode(' OR ', $sql['where']);
-            }
+            $stmt = $this->get_core_master()->prepare($sql_string);
+            $stmt->execute($sql['data']);
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-            if (isset($sql['order'])) {
-                $sql .= ' ORDER BY ';
-                $sql .= $sql['order'];
-            }
-
-            $sql .= ';';
-
-            var_dump($sql);
-
-            $result = $this->get_core_slave()->query($sql);
-            $result->setFetchMode(PDO::FETCH_OBJ);
-
-            return $result;
+            return $stmt->fetch();
 
         }
 
         public function insert($sql) {
 
-            dump($this->get_core_master());
-            echo "insert sql" ;
-            dump($sql);
             $query = $this->get_core_master()->prepare('INSERT INTO ' . $sql['tables'] . ' (' . $sql['fields'] . ') VALUES (' . $sql['values'] . ')');
             $query->execute($sql['data']);
         }
