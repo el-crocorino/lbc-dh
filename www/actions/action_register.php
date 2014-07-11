@@ -26,7 +26,9 @@
 
             // Display searches list form
             
-            $dSession['state'] = array('main' => 's_searches_form', 'option' => 'login');    
+            $dSession['user'] = $user->to_array();
+            $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 
+            header('Location: index.php?action=searches_form');   
             
         }
     
