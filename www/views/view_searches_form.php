@@ -14,7 +14,7 @@
             <input type="submit" class="submit" value="Ajouter" style="width:150px; margin-left:85%">
         </form>
     </div>
-    <div id="search_list">
-        
+    <div id="search_list">        
+        <h2>Vos recherches</h2>
     </div>
 </div>

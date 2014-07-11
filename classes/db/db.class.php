@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     class db extends db_orm {
 
@@ -16,7 +16,7 @@
 
         }
 
-        public function get_all(array $sql) {            
+        public function get_all(array $sql) {
 
             $sql_string = 'SELECT ';
             $sql_string .= isset($sql['fields']) ? $sql['fields'] : '*';
@@ -27,7 +27,14 @@
             $stmt->execute($sql['data']);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-            return $stmt->fetch();
+            #return $stmt->fetch();
+
+            $arrAll = $stmt->fetchAll();
+
+            $stmt->closeCursor();
+            $stmt = NULL;
+
+            return $arrAll;
 
         }
 
