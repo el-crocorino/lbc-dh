@@ -23,7 +23,7 @@
 
         } else {
         
-            // Display login form        
+            // Display searches list      
             
             $dSession['user_id'] = $user->get_id();
             $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 

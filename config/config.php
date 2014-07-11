@@ -11,7 +11,8 @@ ini_set('error_reporting', E_ALL);
 
 $dConfig['includes'] = array(
 	'functions.php',
-	'load.php'
+	'load.php',
+	'messages.php'
 	);
 
 // Application directories
@@ -43,6 +44,7 @@ $dConfig['webapp'] = array('title' => "&Eacute;valuez les annonces !");
 $dConfig['templates']['main'] = array('url' => $dConfig['directories']['templates'] . 'template_main.php');
 $dConfig['templates']['item'] = array('url' => $dConfig['directories']['templates'] . 'template_item.php');
 $dConfig['views']['home'] = array('url' => $dConfig['directories']['views'] . 'view_home.php');
+$dConfig['views']['error_message'] = array('url' => $dConfig['directories']['views'] . 'view_error_message.php');
 $dConfig['views']['errors'] = array('url' => $dConfig['directories']['views'] . 'view_errors.php');
 $dConfig['views']['searches_form'] = array('url' => $dConfig['directories']['views'] . 'view_searches_form.php');
 $dConfig['views']['search'] = array('url' => $dConfig['directories']['views'] . 'view_search.php');
