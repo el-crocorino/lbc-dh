@@ -57,6 +57,7 @@ $dConfig['js']['url'] = $dConfig['directories']['js'] . 'jquery-2.1.1.min.js';
 // Application actions conf
 
 $dConfig['actions']['get:init'] = array('url' => $dConfig['directories']['actions'] . 'action_init.php');
+$dConfig['actions']['get:logout'] = array('url' => $dConfig['directories']['actions'] . 'action_logout.php');
 $dConfig['actions']['post:login'] = array('url' => $dConfig['directories']['actions'] . 'action_login.php');
 $dConfig['actions']['post:register'] = array('url' => $dConfig['directories']['actions'] . 'action_register.php');
 $dConfig['actions']['get:searches_form'] = array('url' => $dConfig['directories']['actions'] . 'action_searches_form.php');
@@ -76,6 +77,7 @@ $dConfig['actions']['invalid_action'] = array('url' => $dConfig['directories']['
 $dConfig['states']['s_home'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:logout',
 		'post:login',		
 		'post:register'),
 	'view' => $dConfig['directories']['states'] . 's_home.php'
@@ -84,6 +86,7 @@ $dConfig['states']['s_home'] = array(
 $dConfig['states']['s_searches_form'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:logout',
 		'post:view_search',
 		'post:delete_search'),
 	'view' => $dConfig['directories']['states'] . 's_searches_form.php'
@@ -92,6 +95,7 @@ $dConfig['states']['s_searches_form'] = array(
 $dConfig['states']['s_search'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:logout',
 		'get:searches_form',		
 		'post:view_search',
 		'post:add_search',
@@ -104,6 +108,7 @@ $dConfig['states']['s_search'] = array(
 $dConfig['states']['s_item'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:logout',
 		'get:searches_form',
 		'post:view_item',
 		'post:note_item',
@@ -114,6 +119,7 @@ $dConfig['states']['s_item'] = array(
 $dConfig['states']['s_errors'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:logout',
 		'get:retourformulaire'),
 	'view' => $dConfig['directories']['states'] . 's_errors.php'
 );

@@ -126,8 +126,8 @@ function authorize_next_action(&$dConfig, &$dSession, $sAction){
     // action check
 
     $authorized_actions = $dConfig['states'][$state]['authorized_actions'];
-    dump($state);
-    dump($authorized_actions);
+    #dump($state);
+    #dump($authorized_actions);
     $autorise =  !isset($authorized_actions) || in_array($sAction,$authorized_actions);
 
     return $autorise;
