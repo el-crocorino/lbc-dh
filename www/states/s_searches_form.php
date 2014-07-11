@@ -2,7 +2,7 @@
 
 	// on prépare la réponse formulaire 
 
-	$dDisplay['title'] = $dConfig['webapp']['titre'];
+	$dDisplay['title'] = $dConfig['webapp']['title'];
 	$dDisplay['template'] = 'main';
 	$dDisplay['header'] = $dConfig['views']['header']['url'];  
 	$dDisplay['menu'] = $dConfig['views']['menu']['url'];

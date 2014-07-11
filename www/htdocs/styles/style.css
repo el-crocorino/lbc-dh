@@ -33,11 +33,15 @@ body {
     color: #f60;
 }
 
+/* Menu */
+
 #menu li {
     display: inline-block;
     list-style: none; /* pour enlever les puces sur IE7 */
     margin: 10px;
 }
+
+/* Content */
 
 #content.login {
     width:300;
@@ -65,13 +69,32 @@ body {
     box-shadow: 3px 3px 10px #888;
 }
 
+/* Titles */
+
 .login h1 {
     font-size: 30px;
     font-weight: bold;
 }
 
+.app h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.app h1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Forms */
+
 .login label {
-    font-size:20px;
+    font-size: 20px;
+    color: #243c47;
+}
+
+.app label {
+    font-size: 14px;
     color: #243c47;
 }
 
@@ -82,6 +105,15 @@ body {
     font-size: 20px;
     width: 100%;
     padding: 5px;
+}
+
+.app input {
+    color: #9bb1bc;
+    border: 1px solid #9bb1bc;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 100%;
+    padding: 3px;
 }
 
 .form_item {
@@ -96,6 +128,8 @@ body {
     margin: 20px auto;
 
 }
+
+/* Links */
 
 a {
     text-decoration: none;
