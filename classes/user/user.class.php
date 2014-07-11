@@ -40,6 +40,11 @@
             
         }
 
+        /**
+         * Hash user password
+         * 
+         * @return void
+         */
         public function hash_password() {
 
             $options = [
@@ -50,12 +55,23 @@
 
         }
 
+        /**
+         * Checks if given password matches user password
+         * 
+         * @param  string $password login password
+         * @return boolean           password match
+         */
         public function check_password($password) {
 
             return password_verify($password, $this->get_password());
 
         }
 
+        /**
+         * Checks if username exists
+         * 
+         * @return boolean username check
+         */
         public function check_existing_username() {
 
             $db = new db();
@@ -76,6 +92,11 @@
 
         }
 
+        /**
+         * Saves existing user
+         * 
+         * @return boolean   db insert successful
+         */
         public function save() {
 
             $db = new db();
@@ -97,6 +118,11 @@
 
         }
 
+        /**
+         * add new user
+         *
+         * return void
+         */
         public function add() {
 
             $db = new db();
@@ -117,5 +143,27 @@
                 return true;
             };
 
+            return false;
+
         }
+
+        /**
+         * Converts user object to array
+         * 
+         * @return array $user_array user infos
+         */
+        public function to_array() {
+
+            $user_array = array(
+                'id' => $this->get_id(),
+                'username' => $this->get_username(),
+                'firstname' => $this->get_firstname(),
+                'lastname' => $this->get_lastname(),
+                'email' => $this->get_email()
+                );
+
+            return $user_array;
+
+        }
+
     }

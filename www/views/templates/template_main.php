@@ -18,6 +18,11 @@
       ?>
       <hr>
       <?php
+        if (isset($dDisplay['error_message'])) {
+          include $dDisplay['error_message'];
+        }        
+      ?>
+      <?php
         include $dDisplay['content'];
       ?>
     </div>

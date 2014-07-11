@@ -6,6 +6,16 @@ body {
     color: #4e443c;
 }
 
+/* Basics */
+
+.FR {
+    float: right;
+}
+
+.FL {
+    float: left;
+}
+
 #main {
     margin: auto;
     width: 1024px;
@@ -69,6 +79,12 @@ body {
     box-shadow: 3px 3px 10px #888;
 }
 
+.error_message {
+    text-align: center;
+    color: #611811;
+    margin: 10px 0;
+}
+
 /* Titles */
 
 .login h1 {
@@ -81,7 +97,7 @@ body {
     font-weight: bold;
 }
 
-.app h1 {
+.app h2 {
     font-size: 15px;
     font-weight: bold;
 }
@@ -116,11 +132,15 @@ body {
     padding: 3px;
 }
 
-.form_item {
+.login .form_item {
     margin: 20px 0 5px 0;
 }
 
-.submit {
+.app .form_item {
+    margin: 10px 0 5px 0;
+}
+
+.login .submit {
     background-color: #f60;
     color: #FFFFFF;
     height: 40px;
@@ -129,8 +149,19 @@ body {
 
 }
 
-/* Links */
+.app .submit {
+    background-color: #f60;
+    color: #FFFFFF;
+    height: 40px;
+    width: 150;
+    margin: 10px 0 10px 85%;
 
+}
+
+
+
+
+/* Links */
 a {
     text-decoration: none;
     color: #f14e32;

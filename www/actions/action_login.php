@@ -23,9 +23,9 @@
 
         } else {
         
-            // Display login form        
+            // Display searches list      
             
-            $dSession['user_id'] = $user->get_id();
+            $dSession['user'] = $user->to_array();
             $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 
             header('Location: index.php?action=searches_form');
             
