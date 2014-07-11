@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content" class="login">
     <div id="login_form">
         <h1>Connexion</h1>
         <form method="POST" action="index.php?action=login">

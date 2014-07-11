@@ -39,7 +39,7 @@ body {
     margin: 10px;
 }
 
-#content {
+#content.login {
     width:300;
     background-color: #FFFFFF;
     border: 1px solid #e2e0d8;
@@ -52,17 +52,30 @@ body {
     box-shadow: 3px 3px 10px #888;
 }
 
-#content h1 {
+#content.app {
+    width:1000;
+    background-color: #FFFFFF;
+    border: 1px solid #e2e0d8;
+    border-radius: 12px;
+    margin: auto;
+    padding: 20px;    
+    
+    -moz-box-shadow: 3px 3px 10px #888;
+    -webkit-box-shadow: 3px 3px 10px #888;
+    box-shadow: 3px 3px 10px #888;
+}
+
+.login h1 {
     font-size: 30px;
     font-weight: bold;
 }
 
-#content label {
+.login label {
     font-size:20px;
     color: #243c47;
 }
 
-#content input {
+.login input {
     color: #9bb1bc;
     border: 1px solid #9bb1bc;
     border-radius: 7px;

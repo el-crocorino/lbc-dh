@@ -20,7 +20,7 @@ if ($dSession) {
 $sAction = $_GET['action'] ? strtolower($_GET['action']) : 'init'; 
 $sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
 
-dump($sAction);
+#dump($sAction);
 
 if (!authorize_next_action($dConfig, $dSession, $sAction)){ 
 	$sAction = 'invalid_suite'; 
@@ -33,7 +33,7 @@ $scriptAction = $dConfig['actions'][$sAction] ?
 $dConfig['actions'][$sAction]['url'] : 
 $dConfig['actions']['invalid_action']['url']; 
 
-dump($scriptAction);
+#dump($scriptAction);
 
 include $scriptAction; 
 
@@ -42,7 +42,7 @@ include $scriptAction;
 $sStatus = $dSession['state']['main']; 
 $scriptView = $dConfig['states'][$sStatus]['view']; 
 
-dump($scriptView);
+#dump($scriptView);
 
 include $scriptView; 
 

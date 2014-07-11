@@ -27,6 +27,7 @@
             
             $dSession['user_id'] = $user->get_id();
             $dSession['state'] = array('main' => 's_searches_form', 'option' => ''); 
+            header('Location: index.php?action=searches_form');
             
         }
 

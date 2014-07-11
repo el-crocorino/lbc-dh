@@ -82,6 +82,7 @@ $dConfig['states']['s_home'] = array(
 $dConfig['states']['s_searches_form'] = array(
 	'authorized_actions' => array(
 		'get:init',
+		'get:searches_form',
 		'post:view_search',
 		'post:delete_search'),
 	'view' => $dConfig['directories']['states'] . 's_searches_form.php'
