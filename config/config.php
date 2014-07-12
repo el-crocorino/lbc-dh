@@ -42,11 +42,13 @@ $dConfig['webapp'] = array('title' => "&Eacute;valuez les annonces !");
 // Application views conf
 
 $dConfig['templates']['main'] = array('url' => $dConfig['directories']['templates'] . 'template_main.php');
+$dConfig['templates']['searches_form'] = array('url' => $dConfig['directories']['templates'] . 'template_searches_form.php');
 $dConfig['templates']['item'] = array('url' => $dConfig['directories']['templates'] . 'template_item.php');
 $dConfig['views']['home'] = array('url' => $dConfig['directories']['views'] . 'view_home.php');
 $dConfig['views']['error_message'] = array('url' => $dConfig['directories']['views'] . 'view_error_message.php');
 $dConfig['views']['errors'] = array('url' => $dConfig['directories']['views'] . 'view_errors.php');
 $dConfig['views']['searches_form'] = array('url' => $dConfig['directories']['views'] . 'view_searches_form.php');
+$dConfig['views']['searches_list'] = array('url' => $dConfig['directories']['views'] . 'view_searches_list.php');
 $dConfig['views']['search'] = array('url' => $dConfig['directories']['views'] . 'view_search.php');
 $dConfig['views']['item'] = array('url' => $dConfig['directories']['views'] . 'view_item.php');
 $dConfig['views']['header'] = array('url' => $dConfig['directories']['views'] . 'view_header.php');

@@ -30,7 +30,7 @@
                 'user_username' => $username
                 ); 
 
-            $result = $db->get_all($sql);
+            $result = $db->get_row($sql);
 
             if (!empty($result)) {
                 return new user($result);
