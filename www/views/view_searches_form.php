@@ -9,6 +9,6 @@
             <label for="search_url">Adresse de la recherche</label><br />
             <input type="text" name="search_url" id="search_url">
         </div>            
-        <input type="submit" class="submit" value="Ajouter" style="width:150px; margin-left:85%">
+        <input type="submit" class="submit" value="Ajouter" style="width:150px; margin:0 0 0 85%">
     </form>
 </div>

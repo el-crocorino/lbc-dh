@@ -27,8 +27,8 @@
             $sql['values'] = ':search_user_id, :search_flux_id, :search_title, NOW()';
             $sql['data'] = array(
                 'search_user_id' => $this->get_username(),
-                'search_flux_id' => $this->get_firstname(),
-                'search_title' => $this->get_lastname()
+                'search_flux_id' => $this->get_flux_id(),
+                'search_title' => $this->get_title()
                 );
 
             if($db->insert($sql)) {
@@ -38,7 +38,7 @@
         }
 
         /**
-         * add new user
+         * Ddd new search
          *
          * return void
          */
@@ -51,9 +51,9 @@
             $sql['fields'] = 'search_user_id, search_flux_id, search_title, search_updated, search_created';
             $sql['values'] = ':search_user_id, :search_flux_id, :search_title, NOW(), NOW()';
             $sql['data'] = array(
-                'search_user_id' => $this->get_username(),
-                'search_flux_id' => $this->get_password(),
-                'search_title' => $this->get_firstname()
+                'search_user_id' => $this->get_user_id(),
+                'search_flux_id' => $this->get_flux_id(),
+                'search_title' => $this->get_title()
                 );
 
             if($db->insert($sql)) {
@@ -65,17 +65,17 @@
         }
 
         /**
-         * Converts user object to array
+         * Converts search object to array
          *
-         * @return array $user_array user infos
+         * @return array $search_array search infos
          */
         public function to_array() {
 
             $search_array = array(
                 'id' => $this->get_id(),
-                'user_id' => $this->get_username(),
-                'flux_id' => $this->get_firstname(),
-                'title' => $this->get_lastname()
+                'user_id' => $this->get_user_id(),
+                'flux_id' => $this->get_flux_id(),
+                'title' => $this->get_title()
                 );
 
             return $search_array;
@@ -93,7 +93,6 @@
                 'search_user_id' => $user_id
                 );
 
-            dump($sql);
             $search_array = $db->get_all($sql);
 
             return $search_array;

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `search` (
   `search_created` datetime NOT NULL,
   `search_updated` datetime NOT NULL,
   PRIMARY KEY (`search_id`),
-  CONSTRAINT fk_user_id
+  CONSTRAINT fk_search_user_id
    FOREIGN KEY (search_user_id)
    REFERENCES user(user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

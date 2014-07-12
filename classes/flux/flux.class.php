@@ -3,9 +3,97 @@
 	class flux extends flux_orm {
 
 		/**
-		 * get HTML content from url
+         * Saves existing flux
+         *
+         * @return boolean   db insert successful
+         */
+        public function save() {
+
+            $db = new db();
+
+            $sql = array();
+            $sql['tables'] = 'flux';
+            $sql['fields'] = 'flux_user_id, flux_flux_id, flux_title, flux_updated';
+            $sql['values'] = ':flux_user_id, :flux_flux_id, :flux_title, NOW()';
+            $sql['data'] = array(
+                'flux_user_id' => $this->get_user_id(),
+                'flux_flux_id' => $this->get_flux_id(),
+                'flux_title' => $this->get_title()
+                );
+
+            if($db->insert($sql)) {
+                return true;
+            };
+
+        }
+
+        /**
+         * Add new flux
+         *
+         * return void
+         */
+        public function add() {
+
+            $db = new db();
+
+            $sql = array();
+            $sql['tables'] = 'flux';
+            $sql['fields'] = 'flux_user_id, flux_flux_id, flux_title, flux_updated, flux_created';
+            $sql['values'] = ':flux_user_id, :flux_flux_id, :flux_title, NOW(), NOW()';
+            $sql['data'] = array(
+                'flux_user_id' => $this->get_username(),
+                'flux_flux_id' => $this->get_password(),
+                'flux_title' => $this->get_firstname()
+                );
+
+            if($db->insert($sql)) {
+                return true;
+            };
+
+            return false;
+
+        }
+
+        /**
+         * Converts flux object to array
+         *
+         * @return array $flux_array flux infos
+         */
+        public function to_array() {
+
+            $flux_array = array(
+                'id' => $this->get_id(),
+                'user_id' => $this->get_username(),
+                'flux_id' => $this->get_firstname(),
+                'title' => $this->get_lastname()
+                );
+
+            return $flux_array;
+
+        }
+
+        public static function get_user_flux_list($user_id) {
+
+            $db = new db();
+
+            $sql = array();
+            $sql['tables'] = 'flux';
+            $sql['where'][] = 'flux_user_id = :flux_user_id';
+            $sql['data'] = array(
+                'flux_user_id' => $user_id
+                );
+
+            dump($sql);
+            $flux_array = $db->get_all($sql);
+
+            return $flux_array;
+
+        }
+
+		/**
+		 * Get HTML content from url
 		 * 
-		 * @param  string $url url of search
+		 * @param  string $url url of flux
 		 * @return [type]      [description]
 		 */
 		public function get_url_content() {
