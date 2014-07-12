@@ -3,7 +3,6 @@
 	// on prépare la réponse formulaire 
 
 	$dDisplay['title'] = $dConfig['webapp']['title'];
-	$dDisplay['template'] = 'main';
 	$dDisplay['header'] = $dConfig['views']['header']['url'];
 	$dDisplay['error_message'] = $dConfig['views']['error_message']['url'];
 	$dDisplay['menu'] = $dConfig['views']['menu']['url'];
@@ -34,6 +33,12 @@
     	default :
     		$dDisplay['error'] = NULL;
     		break;
+    }
+
+    if (isset($dSession['user'])) {        
+        $dDisplay['template'] = 'searches_form';
+    } else {
+        $dDisplay['template'] = 'main';
     }
 
 

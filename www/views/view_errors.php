@@ -12,7 +12,7 @@
 
     </ul> 
 
-    <div class="info"><?php echo $dDisplay["info"] ?></div> 
+    <div class="info"><pre><?php echo $dDisplay["info"] ?></pre></div> 
 
     <br> 
 

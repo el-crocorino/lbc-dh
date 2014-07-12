@@ -2,6 +2,12 @@
 
 	class flux extends flux_orm {
 
+        public function __construct(array $data) {
+
+            $this->hydrate($data);
+
+        }
+
 		/**
          * Saves existing flux
          *

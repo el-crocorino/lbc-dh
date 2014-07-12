@@ -14,8 +14,8 @@
 
       if($type == 'database'){ 
         $dDisplay['info'] = "Veuillez avertir l'administrateur de l'application"; 
-      }        
-
+      } else {
+        $dDisplay['info'] = print_r($dSession);
+      }    
 
       endSession($dConfig, $dDisplay, $dSession); 
-    ?> 

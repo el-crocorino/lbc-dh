@@ -88,8 +88,9 @@ $dConfig['states']['s_home'] = array(
 $dConfig['states']['s_searches_form'] = array(
 	'authorized_actions' => array(
 		'get:init',
-		'get:searches_form',
 		'get:logout',
+		'get:searches_form',		
+		'post:add_search',
 		'post:view_search',
 		'post:delete_search'),
 	'view' => $dConfig['directories']['states'] . 's_searches_form.php'
@@ -127,8 +128,8 @@ $dConfig['states']['s_errors'] = array(
 	'view' => $dConfig['directories']['states'] . 's_errors.php'
 );
 
-$dConfig['states']['nostatus'] = array('
-	authorized_actions' => array('
+$dConfig['states']['nostatus'] = array(
+	'authorized_actions' => array('
 		get:init')
 	);
 

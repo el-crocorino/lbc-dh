@@ -1,6 +1,6 @@
 <div id="add_search">
     <h2>Ajouter une recherche</h2>
-    <form action="index.php?action=add_search" style="margin:0px">
+    <form action="index.php?action=add_search" method="POST" style="margin:0px">
         <div class="form_item">
             <label for="search_title">Nom de la recherche</label><br />
             <input type="text" name="search_title" id="search_title"> 

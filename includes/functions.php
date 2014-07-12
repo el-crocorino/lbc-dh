@@ -116,6 +116,7 @@ function endSession(&$dConfig, &$dDisplay, &$dSession){
  * @return boolean          authorized action
  */
 function authorize_next_action(&$dConfig, &$dSession, $sAction){
+    
 
     $state = $dSession['state']['main'];
 
@@ -124,9 +125,9 @@ function authorize_next_action(&$dConfig, &$dSession, $sAction){
     }
 
     // action check
-
+    
     $authorized_actions = $dConfig['states'][$state]['authorized_actions'];
-    #dump($state);
+    
     #dump($authorized_actions);
     $autorise =  !isset($authorized_actions) || in_array($sAction,$authorized_actions);
 

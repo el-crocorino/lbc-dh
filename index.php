@@ -1,6 +1,6 @@
 <?php 
 
-require_once('config/config.php'); 
+include('config/config.php'); 
 
 // libraries inclusion
 
@@ -9,7 +9,7 @@ for($i = 0; $i < count($dConfig['includes']); ++$i) {
 }
 
 session_start(); 
-$dSession = $_SESSION["session"]; 
+$dSession = isset($_SESSION["session"]) ? $_SESSION["session"] : false ; 
 
 if ($dSession) {
 	$dSession = unserialize($dSession); 
