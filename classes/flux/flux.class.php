@@ -19,12 +19,11 @@
 
             $sql = array();
             $sql['tables'] = 'flux';
-            $sql['fields'] = 'flux_user_id, flux_flux_id, flux_title, flux_updated';
-            $sql['values'] = ':flux_user_id, :flux_flux_id, :flux_title, NOW()';
+            $sql['fields'] = 'flux_user_id, flux_flux_id, flux_last_check, flux_updated';
+            $sql['values'] = ':flux_user_id, :flux_flux_id, NOW(), NOW()';
             $sql['data'] = array(
                 'flux_user_id' => $this->get_user_id(),
-                'flux_flux_id' => $this->get_flux_id(),
-                'flux_title' => $this->get_title()
+                'flux_flux_id' => $this->get_flux_id()
                 );
 
             if($db->insert($sql)) {
@@ -44,16 +43,18 @@
 
             $sql = array();
             $sql['tables'] = 'flux';
-            $sql['fields'] = 'flux_user_id, flux_flux_id, flux_title, flux_updated, flux_created';
-            $sql['values'] = ':flux_user_id, :flux_flux_id, :flux_title, NOW(), NOW()';
+            $sql['fields'] = 'flux_user_id, flux_url, flux_search_id, flux_last_check, flux_updated, flux_created';
+            $sql['values'] = ':flux_user_id, :flux_url, :flux_search_id, NOW(), NOW(), NOW()';
             $sql['data'] = array(
-                'flux_user_id' => $this->get_username(),
-                'flux_flux_id' => $this->get_password(),
-                'flux_title' => $this->get_firstname()
+                'flux_user_id' => $this->get_user_id(),
+                'flux_url' => $this->get_url(),
+                'flux_search_id' => $this->get_search_id()
                 );
 
-            if($db->insert($sql)) {
-                return true;
+            $insert_id = $db->insert($sql);
+
+            if ($insert_id) {
+                return $insert_id;
             };
 
             return false;
@@ -70,8 +71,11 @@
             $flux_array = array(
                 'id' => $this->get_id(),
                 'user_id' => $this->get_username(),
-                'flux_id' => $this->get_firstname(),
-                'title' => $this->get_lastname()
+                'search_id' => $this->get_firstname(),
+                'url' => $this->get_lastname(),
+                'last_check' => $this->get_last_check(),
+                'created' => $this->get_created(),
+                'updated' => $this->get_updated()
                 );
 
             return $flux_array;

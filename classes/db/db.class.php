@@ -52,8 +52,15 @@
 
         public function insert($sql) {
 
-            $query = $this->get_core_master()->prepare('INSERT INTO ' . $sql['tables'] . ' (' . $sql['fields'] . ') VALUES (' . $sql['values'] . ')');
+            $db = $this->get_core_master();
+            $query = $db->prepare('INSERT INTO ' . $sql['tables'] . ' (' . $sql['fields'] . ') VALUES (' . $sql['values'] . ')');
             $query->execute($sql['data']);
+
+            return $db->lastInsertId();
+        }
+
+        public function update($sql) {
+            /*à écrire*/
         }
 
     }

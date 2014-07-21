@@ -23,24 +23,23 @@
 
             $sql = array();
             $sql['tables'] = 'search';
-            $sql['fields'] = 'search_user_id, search_flux_id, search_title, search_updated';
-            $sql['values'] = ':search_user_id, :search_flux_id, :search_title, NOW()';
+            $sql['fields'] = 'search_user_id, search_title, search_updated';
+            $sql['values'] = ':search_user_id, :search_title, NOW()';
             $sql['data'] = array(
                 'search_user_id' => $this->get_username(),
-                'search_flux_id' => $this->get_flux_id(),
                 'search_title' => $this->get_title()
                 );
 
-            if($db->insert($sql)) {
+            if($db->update($sql)) {
                 return true;
             };
 
         }
 
         /**
-         * Ddd new search
+         * Add new search
          *
-         * return void
+         * return string $insert_id insert id
          */
         public function add() {
 
@@ -48,16 +47,17 @@
 
             $sql = array();
             $sql['tables'] = 'search';
-            $sql['fields'] = 'search_user_id, search_flux_id, search_title, search_updated, search_created';
-            $sql['values'] = ':search_user_id, :search_flux_id, :search_title, NOW(), NOW()';
+            $sql['fields'] = 'search_user_id, search_title, search_updated, search_created';
+            $sql['values'] = ':search_user_id, :search_title, NOW(), NOW()';
             $sql['data'] = array(
                 'search_user_id' => $this->get_user_id(),
-                'search_flux_id' => $this->get_flux_id(),
                 'search_title' => $this->get_title()
                 );
 
-            if($db->insert($sql)) {
-                return true;
+            $insert_id = $db->insert($sql);
+
+            if ($insert_id) {
+                return $insert_id;
             };
 
             return false;
