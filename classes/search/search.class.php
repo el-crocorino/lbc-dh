@@ -65,6 +65,34 @@
         }
 
         /**
+         * load search from db with search id
+         * 
+         * @param  string $search_id search id
+         * @return object           search object
+         */
+        public static function load($search_id) {
+
+            $db = new db();
+
+            $sql = array();
+            $sql['tables'] = 'search';            
+            $sql['fields'] = 'search_id AS id, search_user_id AS user_id, search_title AS title, search_updated AS updated, search_created AS created';
+            $sql['where'][] = 'search_id = :search_id';
+            $sql['data'] = array(
+                'search_id' => $search_id
+                ); 
+
+            $result = $db->get_row($sql);
+
+            if (!empty($result)) {
+                return new search($result);
+            } 
+
+            return false;
+            
+        }
+
+        /**
          * Converts search object to array
          *
          * @return array $search_array search infos
@@ -98,5 +126,44 @@
             return $search_array;
 
         }
+
+        /**
+         * get formatted date
+         * 
+         * @param  $string $date date
+         * @return $string       formatted date
+         */
+        public function get_formatted_date($date) {
+
+            check_string($date, 'date');
+            $date = new DateTime($date);
+
+            return $date->format('d F Y, H:i');
+
+        }
+
+        /**
+         * get formatted created date
+         * 
+         * @return $string       formatted date
+         */
+        public function get_formatted_created() {
+
+            return $this->get_formatted_date($this->get_created());
+
+        }
+
+        /**
+         * get formatted updated date
+         * 
+         * @return $string       formatted date
+         */
+        public function get_formatted_updated() {
+
+            return $this->get_formatted_date($this->get_updated());
+
+        }
+
+
 
     }

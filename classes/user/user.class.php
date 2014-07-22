@@ -13,7 +13,7 @@
         }
 
         /**
-         * load user form db with username
+         * load user from db with username
          * 
          * @param  string $username username
          * @return object           user object

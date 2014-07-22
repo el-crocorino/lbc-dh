@@ -158,12 +158,20 @@ body {
 
 }
 
-
-
-
 /* Links */
 a {
     text-decoration: none;
     color: #f14e32;
     font-weight: bold;
+}
+
+.list {    
+    width: 100%;
+    font-size: 12px;
+    cellpadding: 2px;
+    text-align: center;
+}
+
+.list .date {    
+    color: #243c47;
 }
