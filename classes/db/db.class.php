@@ -63,4 +63,17 @@
             /*à écrire*/
         }
 
+        public function delete($sql) {
+
+            $db = $this->get_core_master();
+            $query = $db->prepare('DELETE FROM ' . $sql['tables'] . ' WHERE ' . $sql['where']);
+            
+            if ($db->execute($sql['data'])) {
+                return $sql['data'];
+            }
+
+            return false;
+
+        }
+
     }

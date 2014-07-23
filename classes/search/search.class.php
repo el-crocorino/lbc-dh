@@ -10,6 +10,18 @@
 
         public function delete() {
 
+            $db = new db();
+
+            $sql = array();
+            $sql['tables'] = 'search';
+            $sql['where'][] = 'search_id = :search_id';
+            $sql['data'] = array(
+                'search_id' => $this->get_id()
+                );
+
+            if($db->update($sql)) {
+                return true;
+            };
         }
 
         /**
