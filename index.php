@@ -17,7 +17,7 @@ if ($dSession) {
 
 // get user action
 
-$sAction = $_GET['action'] ? strtolower($_GET['action']) : 'init'; 
+$sAction = isset($_GET['action']) ? strtolower($_GET['action']) : 'init'; 
 $sAction = strtolower($_SERVER['REQUEST_METHOD']).":$sAction"; 
 
 #dump($sAction);
@@ -46,7 +46,9 @@ $scriptView = $dConfig['states'][$sStatus]['view'];
 
 include $scriptView; 
 
+include $dConfig['templates'][$dDisplay['template']]['url'];
 
+exit(0);
 
 // fin du script - on ne devrait pas arriver là sauf bogue 
 

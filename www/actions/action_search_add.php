@@ -4,7 +4,7 @@
         header('Location: index.php?action=logout');
     }
 
-    $user = user::load($dSession['user']['username']);
+    $user = $dSession['user'];
 
     $search_title = htmlentities($_POST['search_title']);
     $search_url = htmlentities($_POST['search_url']);
@@ -28,6 +28,5 @@
    // on envoie la réponse 
 
    endSession($dConfig, $dDisplay, $dSession); 
-   exit;
+   
    header("Location: index.php?action=searches_form");
-    die();

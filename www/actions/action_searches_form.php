@@ -4,7 +4,8 @@
         header('Location: index.php?action=logout');
     }
 
-    $user = user::load($dSession['user']['username']);
+    $user = $dSession['user'];
+    #$user = user::load($dSession['user']['username']);
 
     $search_list = search::get_user_search_list($user->get_id());
 

@@ -66,8 +66,8 @@ $dConfig['actions']['get:logout'] = array('url' => $dConfig['directories']['acti
 $dConfig['actions']['post:login'] = array('url' => $dConfig['directories']['actions'] . 'action_login.php');
 $dConfig['actions']['post:register'] = array('url' => $dConfig['directories']['actions'] . 'action_register.php');
 $dConfig['actions']['get:searches_form'] = array('url' => $dConfig['directories']['actions'] . 'action_searches_form.php');
-$dConfig['actions']['post:add_search'] = array('url' => $dConfig['directories']['actions'] . 'action_add_search.php');
-$dConfig['actions']['post:delete_search'] = array('url' => $dConfig['directories']['actions'] . 'action_delete_search.php');
+$dConfig['actions']['post:search_add'] = array('url' => $dConfig['directories']['actions'] . 'action_search_add.php');
+$dConfig['actions']['post:search_delete'] = array('url' => $dConfig['directories']['actions'] . 'search_delete.php');
 $dConfig['actions']['post:view_search'] = array('url' => $dConfig['directories']['actions'] . 'action_view_search.php');
 $dConfig['actions']['post:view_item'] = array('url' => $dConfig['directories']['actions'] . 'action_view_item.php');
 $dConfig['actions']['post:note_item'] = array('url' => $dConfig['directories']['actions'] . 'action_note_item.php');
@@ -93,9 +93,9 @@ $dConfig['states']['s_searches_form'] = array(
 		'get:init',
 		'get:logout',
 		'get:searches_form',		
-		'post:add_search',
+		'post:search_add',
 		'post:view_search',
-		'post:delete_search'),
+		'post:search_delete'),
 	'view' => $dConfig['directories']['states'] . 's_searches_form.php'
 );
 
@@ -105,7 +105,7 @@ $dConfig['states']['s_search'] = array(
 		'get:logout',
 		'get:searches_form',		
 		'post:view_search',
-		'post:add_search',
+		'post:search_add',
 		'post:view_item',
 		'post:note_item',
 		'post:delete_item'),

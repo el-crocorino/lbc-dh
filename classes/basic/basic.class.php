@@ -6,7 +6,7 @@
 
           foreach ($data AS $key => $value) {
 
-            $method = 'set_' . ucfirst($key);
+            $method = 'set_' . $key;
                 
             if (method_exists($this, $method)) {
                 $this->$method($value);

@@ -19,7 +19,7 @@
                 'search_id' => $this->get_id()
                 );
 
-            if($db->update($sql)) {
+            if($db->delete($sql)) {
                 return true;
             };
         }

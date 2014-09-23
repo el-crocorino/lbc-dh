@@ -101,9 +101,9 @@ function endSession(&$dConfig, &$dDisplay, &$dSession){
         session_destroy();
     }
 
-    include $dConfig['templates'][$dDisplay['template']]['url'];
+    //include $dConfig['templates'][$dDisplay['template']]['url'];
 
-    exit(0);
+    //exit(0);
 
 }
 
